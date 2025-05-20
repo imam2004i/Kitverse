@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitverse Tool - Multi Tool Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #1E1E2F;
+            --text-color: #EAEAEA;
+            --header-bg: #2B2D42;
+            --accent: #FFD700;
+            --accent-hover: #E6C200;
+            --card-bg: #3A3D5B;
+            --card-hover: #FFD700;
+            --shadow: rgba(255, 215, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        main {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card:hover {
+            background-color: var(--card-hover);
+            color: var(--bg-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--shadow);
+        }
+
+        .tool-card h2 {
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .tool-card:hover h2 {
+            color: var(--bg-color);
+        }
+
+        .tool-card p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tool-btn {
+            background-color: var(--accent);
+            color: var(--bg-color);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            align-self: flex-start;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        .tool-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--header-bg);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .contact {
+            margin-top: 1rem;
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tool-card {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .tool-card:nth-child(1) { animation-delay: 0.1s; }
+        .tool-card:nth-child(2) { animation-delay: 0.2s; }
+        .tool-card:nth-child(3) { animation-delay: 0.3s; }
+        .tool-card:nth-child(4) { animation-delay: 0.4s; }
+        .tool-card:nth-child(5) { animation-delay: 0.5s; }
+        .tool-card:nth-child(6) { animation-delay: 0.6s; }
+        .tool-card:nth-child(7) { animation-delay: 0.7s; }
+        .tool-card:nth-child(8) { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kitverse Tool</h1>
+        <p class="tagline">Your premium multi-tool hub for all digital needs</p>
+    </header>
+
+    <main>
+        <div class="tools-grid">
+            <!-- Tool 1: Image Converter -->
+            <div class="tool-card">
+                <h2><i class="fas fa-exchange-alt"></i> Image Converter</h2>
+                <p>Convert images between JPG, PNG, WEBP, and other formats with high quality preservation.</p>
+                <a href="#" class="tool-btn" onclick="redirectToTool('Image Converter')">Use Tool</a>
+            </div>
+
+            <!-- Tool 2: Image Compressor -->
+            <div class="tool-card">
+                <h2><i class="fas fa-compress-alt"></i> Image Compressor</h2>
+                <p>Reduce image file sizes without noticeable quality loss, perfect for web optimization.</p>
+                <a href="#" class="tool-btn" onclick="redirectToTool('Image Compressor')">Use Tool</a>
+            </div>
+
+            <!-- Tool 3: Image Crop -->
+            <div class="tool-card">
+                <h2><i class="fas fa-crop-alt"></i> Image Crop</h2>
+                <p>Precisely crop your images to any dimension or aspect ratio with real-time preview.</p>
+                <a href="#" class="tool-btn" onclick="redirectToTool('Image Crop')">Use Tool</a>
+            </div>
+
+            <!-- Tool 4: Video Converter -->
+            <div class="tool-card">
+                <h2><i class="fas fa-video"></i> Video Converter</h2>
+                <p>Convert videos between MP4, MOV, AVI, and other popular formats quickly.</p>
+                <a href="#" class="tool-btn" onclick="redirectToTool('Video Converter')">Use Tool</a>
+            </div>
+
+            <!-- Tool 5: Age Calculator -->
+            <div class="tool-card">
+                <h2><i class="fas fa-birthday-cake"></i> Age Calculator</h2>
+                <p>Calculate exact age in years, months, and days from any birth date to today.</p>
+                <a href="#" class="tool-btn" onclick="redirectToTool('Age Calculator')">Use Tool</a>
+            </div>
+
+            <!-- Tool 6: EMI Calculator -->
+            <div class="tool-card">
+                <h2><i class="fas fa-calculator"></i> EMI Calculator</h2>
+                <p>Calculate Equated Monthly Installments for loans with detailed breakdown.</p>
+                <a href="#" class="tool-btn" onclick="redirectToTool('EMI Calculator')">Use Tool</a>
+            </div>
+
+            <!-- Tool 7: SIP Calculator -->
+            <div class="tool-card">
+                <h2><i class="fas fa-chart-line"></i> SIP Calculator</h2>
+                <p>Calculate returns on your Systematic Investment Plan investments.</p>
+                <a href="#" class="tool-btn" onclick="redirectToTool('SIP Calculator')">Use Tool</a>
+            </div>
+
+            <!-- Tool 8: Audio Trim -->
+            <div class="tool-card">
+                <h2><i class="fas fa-music"></i> Audio Trim</h2>
+                <p>Cut and trim audio files to create perfect sound clips and ringtones.</p>
+                <a href="#" class="tool-btn" onclick="redirectToTool('Audio Trim')">Use Tool</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="contact">
+            Contact us: <a href="mailto:imamsk0425@gmail.com">imamsk0425@gmail.com</a>
+        </div>
+        <p>&copy; 2023 Kitverse Tool. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple redirect function that shows an alert (would be replaced with actual navigation)
+        function redirectToTool(toolName) {
+            alert(`Redirecting to ${toolName}...`);
+            // In a real implementation, you would use:
+            // window.location.href = `/tools/${toolName.toLowerCase().replace(' ', '-')}`;
+        }
+
+        // Add animation class when scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.tool-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
